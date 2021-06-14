@@ -18,9 +18,19 @@ public class Player : NetworkBehaviour
         }
     }
 
+    void HandleCamera()
+    {
+        float moveX = Input.GetAxis("Horizontal") * Time.deltaTime * 110.0f;
+        float moveZ = Input.GetAxis("Vertical") * Time.deltaTime * 4f;
+
+        transform.Rotate(0, moveX, 0);
+        transform.Translate(0, 0, moveZ);
+    }
+
     void Update()
     {
         HandleMovement();
+        HandleCamera();
 
         if (isLocalPlayer && Input.GetKeyDown(KeyCode.X))
         {
@@ -58,4 +68,12 @@ public class Player : NetworkBehaviour
     {
         Debug.Log($"We had {oldCount} holas but now we have {newCount} holas!");
     }
+
+
+    public override void OnStartLocalPlayer()
+    {
+        Camera.main.transform.SetParent(transform);
+            Camera.main.transform.localPosition = new Vector3(0, 0, 0);
+    }
+
 }
