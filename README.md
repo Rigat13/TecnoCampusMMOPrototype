@@ -3,6 +3,9 @@ Prototype for the Software Laboratory I class at TecnoCampus.
 
 By Carles Rigat Almansa, with Javier Fernández Montes' support.
 
+Presentation about the process:
+https://docs.google.com/presentation/d/1dwJDfbgFMwDbaZ8LrzMvMIC-LOf2N6RDxbxXg6Uq3P0/edit?usp=sharing
+
 Helpful links used:
 
 GUIDES
